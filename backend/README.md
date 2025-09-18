@@ -1,4 +1,4 @@
-# "BreathGuard AI" Multi-Agent System Using Coral Protocol
+# COPD Agentic AI - Multi-Agent System Using Coral Protocol
 
 This guide provides a step-by-step process to set up, build, and run the complete multi-agent backend for the "BreathGuard AI" project using the latest version of Coral Protocol.
 
