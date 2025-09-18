@@ -41,7 +41,7 @@ COPD-Agentic-AI/
 |
 |    └── docker-compose.yml          # The master file to run everything
 |
-└── README.md
-└── .gitignore
+├── README.md
+├── .gitignore
 └── .env
 ```
