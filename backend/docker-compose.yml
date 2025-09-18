@@ -1,0 +1,19 @@
+services:
+  coral-server:
+    # This tells Docker to build the server from the source code in the 'coral-server' directory.
+    build: ./coral-server
+    container_name: coral_server
+    ports:
+      # This maps port 5555 inside the container to port 5555 on your local machine.
+      - "5555:5555"
+    volumes:
+      # This is the most important part! We are mounting our V1 config files
+      # into the /config directory inside the container, which is where the server looks for them.
+      - ./registry.toml:/config/registry.toml
+      - ./config.toml:/config/config.toml
+      # We also mount the agents' source code so the server can execute their run scripts.
+      - ./agents:/agents
+    environment:
+      # These variables tell the V1 server the exact paths to your new config files.
+      - REGISTRY_FILE_PATH=/config/registry.toml
+      - CONFIG_FILE_PATH=/config/config.toml

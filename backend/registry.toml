@@ -1,0 +1,20 @@
+# This file tells the Coral Server where to find all the agent definition files.
+# The paths are relative to this registry.toml file.
+
+[[local-agent]]
+path = "agents/personal_health_coach"
+
+[[local-agent]]
+path = "agents/interface"
+
+# [[local-agent]]
+# path = "agents/symptom_analyzer"
+
+# [[local-agent]]
+# path = "agents/exacerbation_predictor"
+
+# [[local-agent]]
+# path = "agents/critical_alert_manager"
+
+# [[local-agent]]
+# path = "agents/environment_monitor"

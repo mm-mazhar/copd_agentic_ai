@@ -1,0 +1,46 @@
+# Agent metadata for the main user-facing agent
+[agent]
+name = "InterfaceAgent"
+version = "0.1.0"
+description = "Acts as the main user interface, taking user input and coordinating with other agents to fulfill requests."
+
+# --- Options (Environment Variables) ---
+# These are the settings and secrets this agent needs to run.
+# The Coral Server will provide these values to the agent's runtime when a session starts.
+
+[options.MODEL_API_KEY]
+type = "string"
+description = "API key for the model provider (e.g., OpenAI, Mistral)"
+
+[options.MODEL_NAME]
+type = "string"
+description = "What model to use (e.g., 'gpt-4.1-mini')"
+default = "gpt-4.1-mini"
+
+[options.MODEL_PROVIDER]
+type = "string"
+description = "What model provider to use (e.g., 'openai')"
+default = "openai"
+
+[options.MODEL_MAX_TOKENS]
+type = "string"
+description = "Max tokens to use for the model's response"
+default = "16000"
+
+[options.MODEL_TEMPERATURE]
+type = "string"
+description = "What model temperature to use for creativity (0.0 to 2.0)"
+default = "0.3"
+
+[options.TIMEOUT_MS]
+type = "string"
+description = "Connection and tool timeouts in milliseconds"
+default = "60000"
+
+# --- Runtimes ---
+# This section tells the Coral Server HOW to run this agent.
+
+[runtimes.executable]
+# This command starts the agent. Based on the demo structure, it calls the shell script
+# which then sets up the environment and runs the main.py file.
+command = ["bash", "../agents/interface/run_agent.sh"]

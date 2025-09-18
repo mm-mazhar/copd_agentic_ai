@@ -1,0 +1,35 @@
+# Agent metadata
+[agent]
+name = "PersonalHealthCoach"
+version = "0.1.0"
+description = "Provides personalized COPD management advice using a RAG system with a medical knowledge base."
+
+# --- Options (Environment Variables) ---
+# These are the secrets and settings the agent needs to run.
+# The Coral Server will collect these from the user/environment and pass them to the agent's runtime.
+
+[options.MISTRAL_AI_API_KEY]
+type = "string"
+description = "API key for the Mistral AI model."
+
+[options.ASTRA_DB_API_ENDPOINT]
+type = "string"
+description = "API Endpoint for the AstraDB vector store."
+
+[options.ASTRA_DB_APPLICATION_TOKEN]
+type = "string"
+description = "Application Token for the AstraDB vector store."
+
+# You could add more options if needed, like the model name, etc.
+[options.MODEL_NAME]
+type = "string"
+description = "The specific Mistral model to use."
+default = "mistral-large-latest"
+
+# --- Runtimes ---
+# This section tells the Coral Server HOW to run this agent.
+# We are using the "executable" runtime, which means it will run a command on the host.
+[runtimes.executable]
+# This command will be executed from the root of the `coral-server` directory.
+# That's why the path is relative (`../agents/...`).
+command = ["bash", "../agents/personal_health_coach/run_agent.sh"]

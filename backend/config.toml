@@ -1,0 +1,12 @@
+# Simplified config.toml
+
+[network]
+# This explicitly sets the port the Coral Server will listen on.
+# 5555 is the default, but being explicit is good practice.
+bind_port = 5555
+
+[docker]
+# This is a special DNS name that allows the Docker containers (where the agents might run)
+# to communicate back to the host machine (where your Next.js app or Coral Studio might be running).
+# It's a modern, cross-platform default for Docker Desktop on Windows and Mac.
+address = "host.docker.internal"
