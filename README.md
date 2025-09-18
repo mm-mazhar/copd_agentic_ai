@@ -5,7 +5,7 @@
 
 ```
 COPD-Agentic-AI/
-├── .git/               <-- YOUR PROJECT'S MAIN HISTORY
+├── .git/               
 |
 |
 ├── frontend/
